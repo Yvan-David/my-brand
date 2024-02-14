@@ -63,7 +63,7 @@ form .field{
 }
 .form-link{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .form-link span,
 .form-link span a{
@@ -76,6 +76,10 @@ form .field{
 }
 .form a:hover{
     text-decoration: underline;
+}
+#email_error, #password_error{
+    color: red;
+    font-size: 12px;
 }
 .line{
     position: relative;

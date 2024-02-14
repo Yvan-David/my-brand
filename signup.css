@@ -61,21 +61,16 @@ form .field{
     padding: 0 15px;
     border: 1px solid #CACACA;
 }
-.form-link{
-    text-align: center;
-    margin-top: 10px;
-}
-.form-link span,
-.form-link span a{
-    font-size: 14px;
-    font-weight: 400;
-}
 .form a{
     color: #01EEFF;
     text-decoration: none;
 }
 .form a:hover{
     text-decoration: underline;
+}
+#name_error, #email_error, #password_error{
+    color: red;
+    font-size: 12px;
 }
 .line{
     position: relative;

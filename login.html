@@ -12,18 +12,20 @@
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
-                <form action="#">
+                <form id="form">
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input type="email" id="email" placeholder="Email" class="input">
+                        <span id="email_error"></span>
                     </div>
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
+                        <input type="password" id="password" placeholder="Password" class="password">
+                        <span id="password_error"></span>
                     </div>
                     <div class="form-link">
                         <a href="#" class="forgot-pass">Forgot password?</a>
                     </div>
                     <div class="field button-field">
-                        <button>Login</button>
+                        <button type="submit">Login</button>
                     </div>
                     <div class="form-link">
                         <span>Don't have an account? <a href="signup.html" class="signup-link">sign up</a></span>
@@ -33,5 +35,6 @@
             <div class="line"></div>
         </div>
     </section>
+    <script src="login.js"></script>
 </body>
 </html>
