@@ -15,11 +15,11 @@
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
-               <!--  <li><a href="dashboard/dashboard.html">Dashboard</a></li> -->
+                <li><a href="/dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login/login.html">Login</a></li>
+                <li><a onclick="logout()" href="/login/login.html">Logout</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -79,19 +79,19 @@
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-solid fa-crop-simple"></i>
                 <h2>UI/UX Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
                 <h2>app Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
         </div>
     </div>
@@ -178,9 +178,8 @@
     function openmenu() {sidemeu.style.right = '0';}
     function closemenu() {sidemeu.style.right = '-200px';}
 </script>
-<script src="contact/contact.js"></script>
+<script src="/contact/contact.js"></script>
 
-
-
+<script src="admin.js"></script>
 </body>
 </html>

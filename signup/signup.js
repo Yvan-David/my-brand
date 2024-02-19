@@ -30,4 +30,31 @@ form.addEventListener('submit',(e)=>{
     else{
         password_error.innerHTML = ""
     }
+    if(!((username.value === '' || username.value == null) || (!email.value.match(emailRegex)) || (password.value.length <= 5)) )
+        {saveData();}
 })
+/* ----- function that saves input data ------ */
+function saveData(){
+    let username, email, password;
+    username = document.getElementById('username').value;
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
+
+    let user_records= new Array();
+    user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
+    if(user_records.some((v)=>{
+        return v.email == email
+    })){
+        alert("duplicate email")
+    }
+    else{
+        user_records.push({
+            "username":username,
+            "email":email,
+            "password":password,
+        })
+        localStorage.setItem("users",JSON.stringify(user_records));
+        //localStorage.clear();
+    }
+
+}

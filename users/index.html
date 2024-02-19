@@ -19,13 +19,13 @@
                 <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login/login.html">Login</a></li>
+                <li><a href="/login/login.html">Logout</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-            <p>Hello it's Me<h1>Yvan David</h1>
+            <p>Hello <span><script>document.write(sessionStorage.getItem('username'))</script></span> it's Me<h1>Yvan David</h1>
             <br>And I'am a <span>junior developer</span></p>
         </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/me1.jpg">
+                <img src="/images/me1.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About <span>Me</span></h1>
@@ -79,19 +79,19 @@
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-solid fa-crop-simple"></i>
                 <h2>UI/UX Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
                 <h2>app Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="blog/blog.html">Learn more</a>
+                <a href="/blog/blog.html">Learn more</a>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
         <h1 class="sub-title">My Projects</h1>
         <div class="project-list">
             <div class="project">
-                <img src="images/img1.jpg">
+                <img src="/images/img1.jpg">
                 <div class="layer">
                     <h3>Therapy website</h3>
                     <p>The website users can schedule therapy sessions</p>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="project">
-                <img src="images/img2.jpg">
+                <img src="/images/img2.jpg">
                 <div class="layer">
                     <h3>AirBnb</h3>
                     <p>The website users can book airbnb online</p>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="project">
-                <img src="images/img3.jpg">
+                <img src="/images/img3.jpg">
                 <div class="layer">
                     <h3>portfolio website</h3>
                     <p>The website users can see my work and hire me</p>

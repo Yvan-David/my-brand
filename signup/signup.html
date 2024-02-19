@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <a href="index.html" id="hom"><h2 class="logo">Portfolio.</h2></a>
+    <a href="/index.html" id="hom"><h2 class="logo">Portfolio.</h2></a>
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
@@ -26,10 +26,10 @@
                         <span id="password_error"></span>
                     </div>
                     <div class="field button-field">
-                        <button type="submit">Sign Up</button>
+                        <button id="save_btn" type="submit">Sign Up</button>
                     </div>
                     <div class="form-link">
-                        <span>Already have an account <a href="login.html" class="signup-link">sign in</a></span>
+                        <span>Already have an account <a href="/login/login.html" class="signup-link">sign in</a></span>
                     </div>
                 </form>
             </div>
@@ -37,5 +37,28 @@
         </div>
     </section>
     <script src="signup.js"></script>
+<!--     <script>function saveData(){
+        let username, email, password;
+        username = document.getElementById('username').value;
+        email = document.getElementById('email').value;
+        password = document.getElementById('password').value;
+    
+        let user_records= new Array();
+        user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
+        if(user_records.some((v)=>{
+            return v.email == email
+        })){
+            alert("duplicate email")
+        }
+        else{
+            user_records.push({
+                "username":username,
+                "email":email,
+                "password":password,
+            })
+            localStorage.setItem("users",JSON.stringify(user_records));
+        }
+    
+    }</script> -->
 </body>
 </html>
