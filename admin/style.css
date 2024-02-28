@@ -52,6 +52,11 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
+nav ul li a button{
+    background-color: #151925;
+    border-color: #151925;
+    color: white;
+}
 .header-text{
     margin-top: 20%;
     font-size: 30px

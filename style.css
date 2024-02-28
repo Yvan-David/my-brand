@@ -14,7 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100%;
-    background: #151925;
+    background: #222735;
     background-size: cover;
     background-position: center;
 }
@@ -134,6 +134,7 @@ nav ul li a:hover::after{
 /* ----------blogs------ */
 #blogs{
     padding: 30px 0;
+    color: #323845;
 }
 .blogs-list{
     display: grid;

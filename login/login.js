@@ -22,61 +22,61 @@ form.addEventListener('reset',(e)=>{
     else{
         password_error.innerHTML = ""
     }
-    // if(!((username.value === '' || username.value == null) || (!email.value.match(emailRegex)) || (password.value.length <= 5)) )
-    //     {saveData()}
 })
-function loggedData(){
-    let email, password;
-    email = document.getElementById('email').value;
-    password = document.getElementById('password').value;
-
-    let logged_user = new Array();
-    logged_user = JSON.parse(localStorage.getItem("logged_users"))?JSON.parse(localStorage.getItem("logged_users")):[];
-    if(logged_user.some((v)=>{
-        return v.email == email
-    })){
-        //alert("already logged in")
+function loggedData(email){
+    let logged_users = JSON.parse(localStorage.getItem("logged_users")) || [];
+    if(!logged_users.some((v)=> v.email === email)){
+        logged_users.push({"email":email})
+        localStorage.setItem("logged_users",JSON.stringify(logged_users));
     }
-    else{
-        logged_user.push({
-            "email":email,
-            "password":password,
-        })
-        localStorage.setItem("logged_users",JSON.stringify(logged_user));
-        //localStorage.clear();
-    }
+    sessionStorage.setItem('logged', email)
 
 }
 
 
-function saveData(){
-    let email, password;
-    email = document.getElementById('email').value;
-    password = document.getElementById('password').value;
-    let logged_user = new Array();
-    let user_records= new Array();
-    user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
-    if(user_records.some((v)=>{
-        return v.email == email && v.password == password
-    })){
-        alert("Login Successful")
-        logged_user.push(user_records.filter((v)=>{
-            return v.email==email  && v.password==password
-        })[0])
-        loggedData();
-        sessionStorage.setItem('username',`${(user_records.filter((v)=>{
-            return v.email==email  && v.password==password
-        })[0]).username}`)
-        if((user_records.filter((v)=>{
-            return v.email=='irankundayvan2020@gmail.com'  && v.password=='asdfghj'
-        })[0])){
-            window.location.href="/admin/index.html"
-        }
-        else{
-            window.location.href="/users/index.html"
+document.addEventListener("DOMContentLoaded", function () {
+    // Check if the user is signed in
+    if (isUserSignedIn()) {
+        // Redirect to another page or perform actions
+        redirectToDashboard();
+    }
+
+    function isUserSignedIn() {
+        // Check if user information is available in session storage
+        let logged = sessionStorage.getItem("logged");
+        return logged !== null;
+    }
+
+    function redirectToDashboard() {
+        let email = sessionStorage.getItem("logged");
+        if (email === 'irankundayvan2020@gmail.com') {
+            window.location.href = "/admin/index.html";
+        } else {
+            window.location.href = "/users/index.html";
         }
     }
-    else{
-        alert("Incorrect Email or Password")
+});
+
+function saveData() {
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let user_records = JSON.parse(localStorage.getItem("users")) || [];
+
+    if (user_records.some((v) => v.email === email && v.password === password)) {
+        alert("Login Successful");
+        sessionStorage.setItem('username', user_records.find((v) => v.email === email).username);
+        loggedData(email);
+        redirectToDashboard();
+    } else {
+        alert("Incorrect Email or Password");
+    }
+}
+
+function redirectToDashboard() {
+    let email = sessionStorage.getItem("logged");
+    if (email === 'irankundayvan2020@gmail.com') {
+        window.location.href = "/admin/index.html";
+    } else {
+        window.location.href = "/users/index.html";
     }
 }
